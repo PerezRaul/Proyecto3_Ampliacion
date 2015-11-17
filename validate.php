@@ -4,7 +4,7 @@
 mysql_connect('localhost','root','') or die ('Ha fallado la conexión: '.mysql_error());
 
 //Establecer conexión con la base de datos
-mysql_select_db('club_estudio') or die ('Error al seleccionar la Base de Datos: '.mysql_error());
+mysql_select_db('club_estudio_proyecto3') or die ('Error al seleccionar la Base de Datos: '.mysql_error());
 
  
 // Recoger lo que ha introducido el usuario
@@ -18,20 +18,30 @@ $result = mysql_query("SELECT * FROM usuario WHERE nom = '$user'");
 if($row = mysql_fetch_array($result))
 {     
 //Si el usuario es correcto ahora validamos su contraseña
-   if($row["pass"] == $passwd)
-   {
-    //Creamos sesión
-    session_start();  
-    //Almacenamos el nombre de usuario en una variable de sesión usuario
-    $_SESSION['nom'] = $user;
-    $_SESSION['id_user'] = $row["id_user"] ;
-      if($row['rol'] == 1){
-        //Redireccionamos a la pagina: admin.php
-        header("Location: admin.php");  
+   if($row["pass"] == $passwd){
+    // validamos el estado del usuario
+    if($row["estado"] == 0){
+      //Creamos sesión
+      session_start();  
+      //Almacenamos el nombre de usuario en una variable de sesión usuario
+      $_SESSION['nom'] = $user;
+      $_SESSION['id_user'] = $row["id_user"] ;
+        if($row['rol'] > 0){
+          //Redireccionamos a la pagina: admin.php
+          header("Location: admin.php");  
+        } else {
+          //Redireccionamos a la pagina: user.php
+          header("Location: user.php");
+        }
       } else {
-        //Redireccionamos a la pagina: user.php
-        header("Location: user.php");
+      ?>
+        <script languaje="javascript">
+            alert("¡Has introducido un usuario desactivado");
+            location.href = "index.html";
+        </script>
+      <?php
       }
+      
    }
    else
    {

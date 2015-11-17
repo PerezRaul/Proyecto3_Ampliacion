@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `club_estudio`
+-- Base de datos: `club_estudio_proyecto3`
 --
--- CREATE DATABASE IF NOT EXISTS `club_estudio` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
--- USE `club_estudio`;
+CREATE DATABASE IF NOT EXISTS `club_estudio_proyecto3` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `club_estudio_proyecto3`;
 
 -- --------------------------------------------------------
 

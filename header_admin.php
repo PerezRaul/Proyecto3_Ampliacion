@@ -26,7 +26,14 @@
       <!-- VALIDATION -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css"></link>
       <script type="text/javascript" src="js/bootstrapValidator.js"></script>
+
+      <!-- FONTAWESOME ICONS-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
       
+      <!-- BOOTSTRAP INPUT FILE -->
+      <link href="path/to/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+      <script src="path/to/js/fileinput.min.js" type="text/javascript"></script>
+
       <!-- Generic page styles -->
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" type="text/css" href="css/global.css">
@@ -39,6 +46,7 @@
             <li><a href="admin.php"><img src ='img/logo.png'width='250' heigth='250'/></a></li>
             <li><a href="busqueda_reservas_admin.php" class="navList">Reservas</a></li>
             <li><a href="historial_incidencias_admin.php" class="navList">SAT</a></li>
+             <li><a href="tabla_usuarios.php" class="navList">SAT users</a></li>
             <li><a href="logout.php" class="navLogout">Salir</a></li>
             <li>
               <?php
@@ -58,7 +66,12 @@
                 echo "<div class='cont'><div class='perfillog'>
                       <h4 style='color:white' 'width:280px'>BIENVENIDO - $nomUsuari </h4></div>";
 
-                $fichero="img/$user_id".".jpg";
+
+                $consulta_usuarios = ("SELECT * FROM usuario");
+                $resultado_usuarios = mysqli_query($con, $consulta_usuarios);
+                $usuario = mysqli_fetch_array($resultado_usuarios);
+
+                $fichero="img/$usuario[img]";
                 if(file_exists($fichero)&&(($user_id) != '')){
                   echo "<div class='perfil'><img src='$fichero' width='50' heigth='50' ></div>";
                 }

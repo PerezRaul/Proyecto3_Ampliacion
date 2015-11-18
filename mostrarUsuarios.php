@@ -20,7 +20,7 @@
 				echo utf8_encode($usuario['pass']);
 				echo "<br />";
 				echo "<b>Rol del usuario: </b> ";
-					if ($usuario['rol']== 1) {
+					if ($usuario['rol'] == 1) {
 						echo "Usuario";
 					} else if ($usuario['rol'] == 2){
 						echo "Administrador";
@@ -29,10 +29,14 @@
 					}
 				echo "<br />";
 				echo "<b>Estado del usuario: </b> ";
-				echo utf8_encode($usuario['estado']);
+					if ($usuario['estado'] == 0){
+						echo "Activo";
+					} else {
+						echo "Inactivo";
+					}
 				echo "<br />";
 			echo "</div>";
-			echo "<div class='botonera'>";
+			echo "<div class='botonera' style='margin-top:160px'>";
 				echo '<div class="btn btn-success" id="btnModificar'.$usuario['id_user'].'">';
 ?>      	
     				<a href="modificarUsuario.php?id_user=<?php echo $usuario['id_user']; ?>"><i class="fa fa-pencil-square-o fa-lg"></i> Modificar</a>
@@ -52,10 +56,10 @@
 
 			$fichero="img/$usuario[img]";
 			if(file_exists($fichero)&&(($usuario['img']) != '')){
-				echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
+				echo "<div class='contimg' style='margin-top:0px'><img src='$fichero' width='200' heigth='200' ></div>";
 			}
 			else{
-				echo "<div class='contimg'><img src ='img/no_disponible.jpg' width='250' heigth='250'/></div>";
+				echo "<div class='contimg' style='margin-top:0px'><img src ='img/no_disponible.jpg' width='200' heigth='200'/></div>";
 			}
 			
 			echo"</div><br />";
@@ -77,14 +81,18 @@
 				    </script>";
 		}
 
-		if ($usuario['rol'] == 3){
-			echo 	"<script>
-				        $(document).ready(function() {
-							$(document.getElementById('btnActivar".$usuario['id_user']."')).attr('disabled', true);				
-							$(document.getElementById('btnDesactivar".$usuario['id_user']."')).attr('disabled', true);
-						});
-				    </script>";
+		if ($_SESSION['rol'] != 3){
+			if ($usuario['rol'] == 3){
+				echo 	"<script>
+					        $(document).ready(function() {
+								$(document.getElementById('btnActivar".$usuario['id_user']."')).attr('disabled', true);				
+								$(document.getElementById('btnDesactivar".$usuario['id_user']."')).attr('disabled', true);
+								$(document.getElementById('btnModificar".$usuario['id_user']."')).attr('disabled', true);
+							});
+					    </script>";
+			}
 		}
+		
 
 	}
 

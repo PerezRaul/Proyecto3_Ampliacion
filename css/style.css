@@ -255,7 +255,7 @@ textarea {
   background:linear-gradient(to right, #FFFFFF 0%, #F6F6F6 38%, #CFCAB4 100%) 0 0 repeat scroll rgba(0, 0, 0, 0);
   border:8px solid #FFFFFF;
   border-radius:5px;
-  height:490px;
+  height:440px;
   margin-left:33%;
   margin-top:1%;
   max-width:550px;
@@ -264,5 +264,24 @@ textarea {
 .botonera4 {
   float: right;
   margin-right: -90px;
+  margin-top: 0px;
+}
+
+.textseccion5 {
+  float: left;
+}
+.contendor5 {
+  background:linear-gradient(to right, #FFFFFF 0%, #F6F6F6 38%, #CFCAB4 100%) 0 0 repeat scroll rgba(0, 0, 0, 0);
+  border:8px solid #FFFFFF;
+  border-radius:5px;
+  height:340px;
+  margin-left:33%;
+  margin-top:1%;
+  max-width:450px;
+  padding:10px;
+}
+.botonera5 {
+  float: right;
+  margin-right: -70px;
   margin-top: 0px;
 }

@@ -16,8 +16,10 @@
 	<div class="container" style="margin-top:10px">
 <div class="row " style="width:75%;margin-top:20px">
 <div class="col-md-20" style="margin-left:20px">
+<h1>Reservas Realizadas</h1>
+<a href='anadirRecurso.php' class='btn btn-success' style='margin-left:70%;margin-top:-13%'><i class='fa fa-plus-circle fa-lg'></i> Añadir Reserva</a>
 <div class="panel panel-default">
-	<div class="panel-body">
+	<div class="panel-body">		
 		<form action="busqueda_reservas_admin.php" method="GET">
 
 			<script type="text/javascript">

@@ -17,7 +17,8 @@
 		?>
 		<div class="container" style="margin-top:10px">
 			<div class="row " style="width:75%;margin-top:20px">
-				<h1 style="margin-left:15px">Filtar Resultados</h1>
+				<h1 style="margin-left:15px">Filtar Recursos</h1>
+				<a href='anadirRecurso.php' class='btn btn-success' style='margin-left:55%;margin-top:-13%'><i class='fa fa-plus-circle fa-lg'></i> Añadir Recurso</a>
 				<div class="col-md-20" style="margin-left:20px">
 					<div class="panel panel-default">
 						<div class="panel-body">

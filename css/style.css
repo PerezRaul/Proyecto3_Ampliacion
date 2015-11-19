@@ -140,7 +140,7 @@ body {
 }
 .btns {
   margin-left: 64%;
-  margin-top: -5%;
+  margin-top: -4.5%;
   width: 191px;
 }
 /* cambios de user.php apliacion estilos css  */
@@ -180,7 +180,7 @@ img {
 }
 .btns {
   margin-left: 64%;
-  margin-top: -5%;
+  margin-top: -4.5%;
   width: 191px;
 }
 .contimg {
@@ -255,7 +255,7 @@ textarea {
   background:linear-gradient(to right, #FFFFFF 0%, #F6F6F6 38%, #CFCAB4 100%) 0 0 repeat scroll rgba(0, 0, 0, 0);
   border:8px solid #FFFFFF;
   border-radius:5px;
-  height:440px;
+  height:490px;
   margin-left:33%;
   margin-top:1%;
   max-width:550px;
@@ -284,4 +284,48 @@ textarea {
   float: right;
   margin-right: -70px;
   margin-top: 0px;
+}
+
+.textseccion6 {
+  float: left;
+}
+.contendor6 {
+  background:linear-gradient(to right, #FFFFFF 0%, #F6F6F6 38%, #CFCAB4 100%) 0 0 repeat scroll rgba(0, 0, 0, 0);
+  border:8px solid #FFFFFF;
+  border-radius:5px;
+  height:480px;
+  margin-left:23%;
+  margin-top:1%;
+  max-width:750px;
+  padding:10px;
+}
+.botonera6 {
+  float: right;
+  margin-right: -120px;
+  margin-top: 0px;
+}
+
+.textseccion7 {
+  float: left;
+}
+.contendor7 {
+  background:linear-gradient(to right, #FFFFFF 0%, #F6F6F6 38%, #CFCAB4 100%) 0 0 repeat scroll rgba(0, 0, 0, 0);
+  border:8px solid #FFFFFF;
+  border-radius:5px;
+  height:560px;
+  margin-left:23%;
+  margin-top:1%;
+  max-width:750px;
+  padding:10px;
+}
+.botonera7 {
+  float: right;
+  margin-right: -120px;
+  margin-top: 0px;
+}
+
+.botonera8 {
+  float: right;
+  margin-right: 420px;
+  margin-top: -60px;
 }

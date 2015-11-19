@@ -30,6 +30,27 @@
       <!-- FONTAWESOME ICONS-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
+      <!-- EFECTO METRO -->
+      <script>            
+        jQuery(document).ready(function() {
+          var offset = 220;
+          var duration = 500;
+          jQuery(window).scroll(function() {
+            if (jQuery(this).scrollTop() > offset) {
+              jQuery('.crunchify-top').fadeIn(duration);
+            } else {
+              jQuery('.crunchify-top').fadeOut(duration);
+            }
+          });
+       
+          jQuery('.crunchify-top').click(function(event) {
+            event.preventDefault();
+            jQuery('html, body').animate({scrollTop: 0}, duration);
+            return false;
+          })
+        });
+      </script>
+
       <!-- Generic page styles -->
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" type="text/css" href="css/global.css">

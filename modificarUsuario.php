@@ -12,17 +12,17 @@
 			<div class="textseccion5">
 				<h1 style="margin-left:20px;">Modificar Usuario</h1>
 				<form id="modificarUsuarioForm" action="modificarUsuario.proc.php" method="post">
-					<input type="hidden" name="id" value="<?php echo $resultado['id_user']; ?>">
+					<input type="hidden" name="id" value="<?php echo $resultado['id_user']; ?>" />
 					<div class="form-group">
 				        <label class="col-xs-4 control-label">Nombre:</label>
 				        <div class="col-xs-8">
-				            <input type="text" class="form-control" name="nombre" maxlength="25" value="<?php echo $resultado['nom']; ?>">
+				            <input type="text" class="form-control" name="nombre" maxlength="25" value="<?php echo $resultado['nom']; ?>" />
 				        </div>
 				    </div><br /><br /><br />
 				    <div class="form-group">
 				        <label class="col-xs-4 control-label">Contraseña:</label>
 				        <div class="col-xs-8">
-				            <input type="password" class="form-control" name="pass" maxlength="25" value="<?php echo $resultado['pass']; ?>">
+				            <input type="password" class="form-control" name="pass" maxlength="25" value="<?php echo $resultado['pass']; ?>" />
 				        </div>
 				    </div><br /><br />
 				    <div class="form-group">
@@ -50,7 +50,7 @@
 				        </div>
 				    </div><br /><br /><br />
 				    <div class="botonera5">
-						<button type="submit" class="btn btn-success">Guardar cambios</button>
+						<button type="submit" class="btn btn-success"><i class="fa fa-floppy-o fa-lg"></i> Guardar cambios</button>
 					</div>
 				</form>
 			</div>

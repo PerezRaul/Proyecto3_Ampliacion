@@ -27,7 +27,7 @@ if($row = mysql_fetch_array($result))
       $_SESSION['nom'] = $user;
       $_SESSION['id_user'] = $row["id_user"] ;
       $_SESSION['rol'] = $row['rol'];
-        if($row['rol'] > 0){
+        if($row['rol'] == 2 || $row['rol'] == 3){
           //Redireccionamos a la pagina: admin.php
           header("Location: admin.php");  
         } else {
@@ -37,7 +37,7 @@ if($row = mysql_fetch_array($result))
       } else {
       ?>
         <script languaje="javascript">
-            alert("¡Has introducido un usuario desactivado");
+            alert("¡No puedes iniciar sesión, ya que tu usuario está inactivo!");
             location.href = "index.html";
         </script>
       <?php

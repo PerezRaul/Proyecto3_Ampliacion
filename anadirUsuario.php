@@ -3,6 +3,10 @@
 	include 'conexion.php';
 	include 'header_admin.php';
 
+	if (isset($_REQUEST['error'])){
+		$msg = $_REQUEST['error'];
+	}
+
 ?>
 		<div class="contendor4">
 			<div class="textseccion4">
@@ -50,10 +54,18 @@
 				        <div class="col-xs-8">
 				            <input type="file" name="foto" id="foto" value="foto" />
 				        </div>
+				    </div><br /><br />
+				    <div id="error" style="color:red;margin-left:185px;">
+				    	<?php 
+				    		if(!empty($msg)){
+				    			echo $msg;
+				    		}
+				    	?>
 				    </div><br /><br /><br />
+				    
 
 				    <div class="botonera4">
-						<button type="submit" class="btn btn-success">Crear usuario</button>
+						<button type="submit" class="btn btn-success"><i class="fa fa-user-plus fa-lg"></i> Crear Usuario</button>
 					</div>
 				</form>
 			</div>

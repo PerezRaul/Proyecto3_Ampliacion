@@ -22,6 +22,22 @@ function mostrarConsultaAdmin (){
 			echo "</div><br/>";
 			echo "<div class='botonera'>";
 
+			echo "<div class='btn btn-warning' id='btnModificar".$recurso['id_recurso']."' name='btnModificar'>";
+?>
+				<a href="modificarRecurso.php?id_recurso=<?php echo $recurso['id_recurso']; ?>"><i class="fa fa-pencil-square-o fa-lg"></i> Modificar</a>
+			</div>
+
+<?php
+			echo "<div class='btn btn-info' id='btnHabilitar".$recurso['id_recurso']."' name='btnHabilitar'>";
+?>
+				<a href="habilitarRecurso.php?id_recurso=<?php echo $recurso['id_recurso']; ?>"><i class="fa fa-eye fa-lg"></i> Habilitar</a>
+			</div>
+<?php
+			echo "<div class='btn btn-danger' id='btnDeshabilitar".$recurso['id_recurso']."' name='btnDeshabilitar'>";
+?>
+				<a href="deshabilitarRecurso.php?id_recurso=<?php echo $recurso['id_recurso']; ?>"><i class="fa fa-eye-slash fa-lg"></i> Deshabilitar</a>
+			</div>
+<?php
 			echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">';
 ?>
 				<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
@@ -68,6 +84,24 @@ function mostrarConsultaAdmin (){
 							});
 					    </script>";
 			}
+
+			if ($recurso['activo'] == 0){
+				echo 	"<script>
+					        $(document).ready(function() {
+								$(document.getElementById('btnHabilitar".$recurso['id_recurso']."')).attr('disabled', true);				
+								$(document.getElementById('btnDeshabilitar".$recurso['id_recurso']."')).attr('disabled', false);
+							});
+					    </script>";
+			} else {
+				echo 	"<script>
+					        $(document).ready(function() {
+								$(document.getElementById('btnHabilitar".$recurso['id_recurso']."')).attr('disabled', false);				
+								$(document.getElementById('btnDeshabilitar".$recurso['id_recurso']."')).attr('disabled', true);
+								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);
+								$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', true);
+							});
+					    </script>";
+			}
 			
 		}
 	} else {
@@ -108,6 +142,23 @@ function mostrarConsultaAdmin (){
 			echo utf8_encode($recurso['descr']);
 			echo "</div><br/>";
 			echo "<div class='botonera'>";
+
+			echo "<div class='btn btn-warning' id='btnModificar".$recurso['id_recurso']."' name='btnModificar'>";
+?>
+				<a href="modificarRecurso.php?id_recurso=<?php echo $recurso['id_recurso']; ?>"><i class="fa fa-pencil-square-o fa-lg"></i> Modificar</a>
+			</div>
+
+<?php
+			echo "<div class='btn btn-info' id='btnHabilitar".$recurso['id_recurso']."' name='btnHabilitar'>";
+?>
+				<a href="habilitarRecurso.php?id_recurso=<?php echo $recurso['id_recurso']; ?>"><i class="fa fa-eye fa-lg"></i> Habilitar</a>
+			</div>
+<?php
+			echo "<div class='btn btn-danger' id='btnDeshabilitar".$recurso['id_recurso']."' name='btnDeshabilitar'>";
+?>
+				<a href="deshabilitarRecurso.php?id_recurso=<?php echo $recurso['id_recurso']; ?>"><i class="fa fa-eye-slash fa-lg"></i> Deshabilitar</a>
+			</div>
+<?php
 			
 			echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">';
 ?>
@@ -152,6 +203,24 @@ function mostrarConsultaAdmin (){
 				echo 	"<script>
 					        $(document).ready(function() {
 								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
+								$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', true);
+							});
+					    </script>";
+			}
+
+			if ($recurso['activo'] == 0){
+				echo 	"<script>
+					        $(document).ready(function() {
+								$(document.getElementById('btnHabilitar".$recurso['id_recurso']."')).attr('disabled', true);				
+								$(document.getElementById('btnDeshabilitar".$recurso['id_recurso']."')).attr('disabled', false);
+							});
+					    </script>";
+			} else {
+				echo 	"<script>
+					        $(document).ready(function() {
+								$(document.getElementById('btnHabilitar".$recurso['id_recurso']."')).attr('disabled', false);				
+								$(document.getElementById('btnDeshabilitar".$recurso['id_recurso']."')).attr('disabled', true);
+								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);
 								$(document.getElementById('btnReparar".$recurso['id_recurso']."')).attr('disabled', true);
 							});
 					    </script>";

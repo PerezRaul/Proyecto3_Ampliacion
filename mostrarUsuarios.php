@@ -5,7 +5,7 @@
     $user_id = $_SESSION['id_user'];
 	  
 	$consulta_usuarios = ("SELECT * FROM usuario");
-	$resultado_usuarios = mysqli_query($con, $consulta_usuarios);
+	$resultado_usuarios = mysqli_query($con, utf8_encode($consulta_usuarios));
 
 	echo "<h1 style='margin-left:22%'>Usuarios</h1>";
 	echo "<a href='anadirUsuario.php' class='btn btn-success' style='margin-left:40%;margin-top:-6%'><i class='fa fa-user-plus fa-lg'></i> Añadir Usuario</a>";

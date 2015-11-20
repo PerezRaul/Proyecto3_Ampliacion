@@ -45,7 +45,7 @@ function mostrarConsulta (){
 				echo "<div class='botonera'>";
 					echo '<div class="btn btn-success" id="btnReservar'.$recurso['id_recurso'].'" name="btnReservar">';
 ?>      	
-	    				<a href="realizarReserva.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+	    				<a href="realizarReserva.php?id_recurso=<?php echo $recurso['id_recurso']; ?>"><i class="fa fa-calendar fa-lg"></i> Reservar</a>
 					</div>
 <?php                 
 	            echo"  </div>";
@@ -112,7 +112,7 @@ function mostrarConsulta (){
 				echo "<div class='botonera'>";         
 					echo '<div class="btn btn-success" id="btnReservar'.$recurso['id_recurso'].'" name="btnReservar">';
 ?>      	
-	    				<a href="realizarReserva.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+	    				<a href="realizarReserva.php?id_recurso=<?php echo $recurso['id_recurso']; ?>"><i class="fa fa-calendar fa-lg"></i> Reservar</a>
 					</div>
 <?php   
 		        echo"</div>";

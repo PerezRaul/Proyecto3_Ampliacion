@@ -16,13 +16,13 @@
 					<div class="form-group">
 				        <label class="col-xs-3 control-label">Nombre:</label>
 				        <div class="col-xs-6">
-				            <input type="text" class="form-control" name="nombre" value="<?php echo utf8_encode($resultado['nombre']); ?>" />
+				            <input type="text" class="form-control" name="nombre" maxlength="30" value="<?php echo utf8_encode($resultado['nombre']); ?>" />
 				        </div>
 				    </div><br /><br /><br />
 				    <div class="form-group">
 				        <label class="col-xs-4 control-label">Descripción:</label>
 				        <div class="col-xs-6">
-				            <textarea class="form-control" rows="7" name="descr" style="width:520px !important;"><?php echo utf8_encode($resultado['descr'])?></textarea>
+				            <textarea class="form-control" rows="7" name="descr" maxlength="250" style="width:520px !important;"><?php echo utf8_encode($resultado['descr'])?></textarea>
 				        </div>
 				    </div><br /><br /><br /><br /><br /><br /><br /><br /><br />
 				    <div class="form-group">
@@ -52,6 +52,43 @@
 				</form>
 			</div>
 		</div>
+
+		<script>
+			$(function () {
+				/* VALIDACION DE LOS CAMPOS DEL FORMULARIO, SI ESTAN RELLENOS O NO */
+				$('#modificarRecursoForm')	.bootstrapValidator({
+			        framework: 'bootstrap',
+			        icon: {
+			            valid: 'glyphicon glyphicon-ok',
+			            invalid: 'glyphicon glyphicon-remove',
+			            validating: 'glyphicon glyphicon-refresh'
+			        },
+			        err: {
+			            container: 'tooltip'
+			        },
+			        fields: {
+			            nombre: {
+			            	err: 'tooltip',
+							row: '.col-xs-4',
+			                validators: {
+			                    notEmpty: {
+			                        message: "Introduce un nombre"
+			                    }
+			                }
+			            },
+			            descr: {
+			            	err: 'tooltip',
+							row: '.col-xs-4',
+			                validators: {
+			                    notEmpty: {
+			                        message: "Introduce una descripción"
+			                    }
+			                }
+			            },
+			        },	 
+			    });
+			});
+		</script>
 		
 <?php
 	} else {

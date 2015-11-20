@@ -37,7 +37,7 @@ if($row = mysql_fetch_array($result))
       } else {
       ?>
         <script languaje="javascript">
-            alert("¡No puedes iniciar sesión, ya que tu usuario está inactivo!");
+            alert("¡Este usuario no existe!");
             location.href = "index.html";
         </script>
       <?php

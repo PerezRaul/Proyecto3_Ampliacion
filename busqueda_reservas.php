@@ -78,7 +78,7 @@
 		        	?>
 		    </select>
 			<!-- Recurso -->
-<select class="btn btn-default" id="recurso" name="recurso" disabled="disabled">
+			<select class="btn btn-default" id="recurso" name="recurso" disabled="disabled">
 		    </select>
 
 		    </div>

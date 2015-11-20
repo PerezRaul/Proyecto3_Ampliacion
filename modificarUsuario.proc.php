@@ -5,7 +5,9 @@
 
 	mysqli_query($con, utf8_decode($sql_insert)) or die("Problemas en el update".mysqli_error($con));
 
+	header("Location: mostrarUsuarios.php");
+
 	mysqli_close($con);
 
-	header("Location: mostrarUsuarios.php");
+	
 ?>

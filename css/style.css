@@ -274,7 +274,7 @@ textarea {
   background:linear-gradient(to right, #FFFFFF 0%, #F6F6F6 38%, #CFCAB4 100%) 0 0 repeat scroll rgba(0, 0, 0, 0);
   border:8px solid #FFFFFF;
   border-radius:5px;
-  height:340px;
+  height:370px;
   margin-left:33%;
   margin-top:1%;
   max-width:450px;
@@ -312,7 +312,7 @@ textarea {
   background:linear-gradient(to right, #FFFFFF 0%, #F6F6F6 38%, #CFCAB4 100%) 0 0 repeat scroll rgba(0, 0, 0, 0);
   border:8px solid #FFFFFF;
   border-radius:5px;
-  height:560px;
+  height:580px;
   margin-left:23%;
   margin-top:1%;
   max-width:750px;
@@ -328,4 +328,24 @@ textarea {
   float: right;
   margin-right: 420px;
   margin-top: -60px;
+}
+
+.textseccion9 {
+  float: left;
+  width: 100%;
+}
+.contendor9 {
+  background:linear-gradient(to right, #FFFFFF 0%, #F6F6F6 38%, #CFCAB4 100%) 0 0 repeat scroll rgba(0, 0, 0, 0);
+  border:8px solid #FFFFFF;
+  border-radius:5px;
+  height:430px;
+  margin-left:33%;
+  margin-top:1%;
+  max-width:500px;
+  padding:10px;
+}
+.botonera9 {
+  float: right;
+  margin-right: 10px;
+  margin-top: 0px;
 }

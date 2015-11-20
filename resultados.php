@@ -30,58 +30,45 @@ function mostrarConsulta (){
 		$datos = mysqli_query($con, $sql);
 		//extraemos los productos uno a uno en la variable $anuncio que es un array
 		while($recurso = mysqli_fetch_array($datos)){
-			echo "<div class='contendor'>";
-			echo"<div class='textseccion'><b>Nombre:</b> ";
-			echo utf8_encode($recurso['nombre']);
-			echo "<br/>";
-			echo "<b>Contenido:</b> ";
-			echo utf8_encode($recurso['descr']);
+			if ($recurso['activo'] == 0){
+				echo "<div class='contendor'>";
+				echo"<div class='textseccion'><b>Nombre:</b> ";
+				echo utf8_encode($recurso['nombre']);
+				echo "<br/>";
+				echo "<b>Contenido:</b> ";
+				echo utf8_encode($recurso['descr']);
 
-			echo "<br/>";
+				echo "<br/>";
 
 
-			echo "</div><br/>";
-			echo "<div class='botonera'>";
-				echo '<div class="btn btn-success" id="btnReservar'.$recurso['id_recurso'].'" name="btnReservar">';
+				echo "</div><br/>";
+				echo "<div class='botonera'>";
+					echo '<div class="btn btn-success" id="btnReservar'.$recurso['id_recurso'].'" name="btnReservar">';
 ?>      	
-    				<a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
-				</div>
+	    				<a href="realizarReserva.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+					</div>
 <?php                 
-            echo"  </div>";
+	            echo"  </div>";
 
 
-			$fichero="img/$recurso[img]";
-			if(file_exists($fichero)&&(($recurso['img']) != '')){
-				echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
-			}
-			else{
-				echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='250' heigth='250'/></div>";
-			}
-			
-			echo"</div>";
-			echo "<br/><br>";
-
-			if ($recurso["estado"] == "0"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
-								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', false);
-							});
-					    </script>";
-			}else if ($recurso["estado"] == "1"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
+				$fichero="img/$recurso[img]";
+				if(file_exists($fichero)&&(($recurso['img']) != '')){
+					echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
+				}
+				else{
+					echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='250' heigth='250'/></div>";
+				}
+				
+				echo"</div>";
+				echo "<br/><br>";
+				
+				if ($recurso['estado'] == 2){
+					echo 	"<script>
+					        $(document).ready(function() {		
 								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
 							});
 					    </script>";
-			} else {
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);
-								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
-							});
-					    </script>";
+				}
 			}
 		}
 	} else {
@@ -114,57 +101,43 @@ function mostrarConsulta (){
 		$datos = mysqli_query($con, $sql);
 		//extraemos los productos uno a uno en la variable $anuncio que es un array
 		while($recurso = mysqli_fetch_array($datos)){
-			echo "<div class='contendor'>";
-			echo"<div class='textseccion'><b>Nombre:</b> ";
-			echo utf8_encode($recurso['nombre']);
-			echo "<br/>";
-			echo "<b>Contenido:</b> ";
-			echo utf8_encode($recurso['descr']);
-			echo "</div><br/>";
-			echo "<div class='botonera'>";         
-				echo '<div class="btn btn-success" id="btnReservar'.$recurso['id_recurso'].'" name="btnReservar">';
+			if ($recurso['activo'] == 0){
+				echo "<div class='contendor'>";
+				echo"<div class='textseccion'><b>Nombre:</b> ";
+				echo utf8_encode($recurso['nombre']);
+				echo "<br/>";
+				echo "<b>Contenido:</b> ";
+				echo utf8_encode($recurso['descr']);
+				echo "</div><br/>";
+				echo "<div class='botonera'>";         
+					echo '<div class="btn btn-success" id="btnReservar'.$recurso['id_recurso'].'" name="btnReservar">';
 ?>      	
-    				<a href="reservar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
-				</div>
+	    				<a href="realizarReserva.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Reservar</a>
+					</div>
 <?php   
-	        echo"</div>";
+		        echo"</div>";
 
 
-			$fichero="img/$recurso[img]";
-			if(file_exists($fichero)&&(($recurso['img']) != '')){
-				echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
-			}
-			else{
-				echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='250' heigth='250'/></div>";
-			}
-			
-			echo"</div>";
-			
-			echo "<br/><br>";
+				$fichero="img/$recurso[img]";
+				if(file_exists($fichero)&&(($recurso['img']) != '')){
+					echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
+				}
+				else{
+					echo "<div class='contimg'><img src ='img/no_disponible.jpg'width='250' heigth='250'/></div>";
+				}
+				
+				echo"</div>";
+				
+				echo "<br/><br>";
 
-			if ($recurso["estado"] == "0"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);				
-								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', false);
-							});
-					    </script>";
-			}else if ($recurso["estado"] == "1"){
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', false);
+				if ($recurso['estado'] == 2){
+					echo 	"<script>
+					        $(document).ready(function() {		
 								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
 							});
 					    </script>";
-			} else {
-				echo 	"<script>
-					        $(document).ready(function() {
-								$(document.getElementById('btnLiberar".$recurso['id_recurso']."')).attr('disabled', true);
-								$(document.getElementById('btnReservar".$recurso['id_recurso']."')).attr('disabled', true);
-							});
-					    </script>";
+				}
 			}
-
 		}
 	}
 

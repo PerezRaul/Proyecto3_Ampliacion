@@ -40,7 +40,7 @@ function mostrarConsultaAdmin (){
 <?php
 			echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">';
 ?>
-				<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
+				<a href="liberar_admin.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
             </div> 
 <?php                
 				echo '<div class="btn btn-success" id="btnReparar'.$recurso['id_recurso'].'" name="btnReparar">';
@@ -162,7 +162,7 @@ function mostrarConsultaAdmin (){
 			
 			echo ' <div class="btn btn-primary" id="btnLiberar'.$recurso['id_recurso'].'" name="btnLiberar">';
 ?>
-				<a href="liberar.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
+				<a href="liberar_admin.php?id_recurso=<?php echo $recurso['id_recurso']; ?>">Liberar</a>
             </div> 
 <?php                
 				echo '<div class="btn btn-success" id="btnReparar'.$recurso['id_recurso'].'" name="btnReparar">';

@@ -30,11 +30,17 @@ function mostrarReservas () {
 				echo utf8_encode($recurso['nombre']);
 				echo "<br/>";
 				echo "<b>Fecha inicio:</b> ";
-				echo utf8_encode($reserva['dateini']);
+				echo utf8_encode($reserva['fecha_inicial']);
 				echo "<br/>";
+				echo "<b>Hora inicio:</b> ";
+				echo utf8_encode($reserva['hora_inicial']);
+				echo "<br />";
 				echo "<b>Fecha fin:</b> ";
-				echo utf8_encode($reserva['datefi']);
-				echo "<br></div><br/>";
+				echo utf8_encode($reserva['fecha_final']);
+				echo "<br/>";
+				echo "<b>Hora fin:</b> ";
+				echo utf8_encode($reserva['hora_final']);
+				echo "<br/></div><br/>";
 				$fichero="img/$recurso[img]";
 				if(file_exists($fichero)&&(($recurso['img']) != '')){
 					echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
@@ -66,11 +72,17 @@ function mostrarReservas () {
 					echo utf8_encode($recurso['nombre']);
 					echo "<br/>";
 					echo "<b>Fecha inicio:</b> ";
-					echo utf8_encode($reserva['dateini']);
+					echo utf8_encode($reserva['fecha_inicial']);
 					echo "<br/>";
+					echo "<b>Hora inicio:</b> ";
+					echo utf8_encode($reserva['hora_inicial']);
+					echo "<br />";
 					echo "<b>Fecha fin:</b> ";
-					echo utf8_encode($reserva['datefi']);
-					echo "<br></div><br/>";
+					echo utf8_encode($reserva['fecha_final']);
+					echo "<br/>";
+					echo "<b>Hora fin:</b> ";
+					echo utf8_encode($reserva['hora_final']);
+					echo "<br/></div><br/>";
 					$fichero="img/$recurso[img]";
 					if(file_exists($fichero)&&(($recurso['img']) != '')){
 					echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";

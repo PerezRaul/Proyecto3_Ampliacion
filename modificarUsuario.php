@@ -16,13 +16,13 @@
 					<div class="form-group">
 				        <label class="col-xs-4 control-label">Nombre:</label>
 				        <div class="col-xs-8">
-				            <input type="text" class="form-control" name="nombre" maxlength="25" value="<?php echo $resultado['nom']; ?>" />
+				            <input type="text" class="form-control" name="nombre" maxlength="30" value="<?php echo $resultado['nom']; ?>" />
 				        </div>
 				    </div><br /><br /><br />
 				    <div class="form-group">
 				        <label class="col-xs-4 control-label">Contraseña:</label>
 				        <div class="col-xs-8">
-				            <input type="password" class="form-control" name="pass" maxlength="25" value="<?php echo $resultado['pass']; ?>" />
+				            <input type="password" class="form-control" name="pass" maxlength="30" value="<?php echo $resultado['pass']; ?>" />
 				        </div>
 				    </div><br /><br />
 				    <div class="form-group">
@@ -55,6 +55,43 @@
 				</form>
 			</div>
 		</div>
+
+		<script>
+			$(function () {
+				/* VALIDACION DE LOS CAMPOS DEL FORMULARIO, SI ESTAN RELLENOS O NO */
+				$('#modificarUsuarioForm')	.bootstrapValidator({
+			        framework: 'bootstrap',
+			        icon: {
+			            valid: 'glyphicon glyphicon-ok',
+			            invalid: 'glyphicon glyphicon-remove',
+			            validating: 'glyphicon glyphicon-refresh'
+			        },
+			        err: {
+			            container: 'tooltip'
+			        },
+			        fields: {
+			            nombre: {
+			            	err: 'tooltip',
+							row: '.col-xs-4',
+			                validators: {
+			                    notEmpty: {
+			                        message: "Introduce el nombre del usuario"
+			                    }
+			                }
+			            },
+			            pass: {
+			            	err: 'tooltip',
+							row: '.col-xs-4',
+			                validators: {
+			                    notEmpty: {
+			                        message: "Introduce una contraseña"
+			                    }
+			                }
+			            },
+			        },	 
+			    });
+			});
+		</script>
 		
 <?php
 	} else {

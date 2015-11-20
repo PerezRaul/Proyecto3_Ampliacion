@@ -20,8 +20,8 @@
 			<form id="frmIncidencia" name="frmIncidencia" role="form" action="incidencias_insert.php">
 
 	            <!-- PARTE DONDE SE ENCUENTRA EL TITULO, AREA Y DESCRIPCION DE LA MEJORA -->
-				<div class="row" style="width:100%;margin-top:20px">
-				    <h1 style="margin-left:15px">Formulario de incidencias</h1>
+				<div class="row" style="width:100%;margin-top:20px;margin-left:-80px">
+				    <h1 style="margin-left:40px">Formulario de incidencias</h1>
 				    
 					<div class="col-md-20" style="margin-left:20px">
 			            <div class="panel panel-default">

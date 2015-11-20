@@ -2,11 +2,11 @@
 	include 'conexion.php';
 
 
-	$sql_delete = "DELETE FROM reserva WHERE id_reserva = $_REQUEST['id_reserva']";
+	$sql_delete = "DELETE FROM reserva WHERE id_reserva = $_REQUEST[id_reserva]";
 
-	// mysqli_query($con, $sql_insert) or die("Problemas en el delete".mysqli_error($con));
+	mysqli_query($con, $sql_delete) or die("Problemas en el delete".mysqli_error($con));
 
-	// header("Location: admin.php");
+	header("Location: busqueda_reservas_admin.php");
 
 	mysqli_close($con);
 

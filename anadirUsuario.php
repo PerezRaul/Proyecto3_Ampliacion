@@ -15,19 +15,20 @@
 					<div class="form-group">
 				        <label class="col-xs-4 control-label">Nombre:</label>
 				        <div class="col-xs-8">
-				            <input type="text" class="form-control" name="nombre" maxlength="25" />
+				            <input type="text" class="form-control" name="nombre" maxlength="30" />
 				        </div>
 				    </div><br /><br /><br />
 				    <div class="form-group">
 				        <label class="col-xs-4 control-label">Contraseña:</label>
 				        <div class="col-xs-8">
-				            <input type="password" class="form-control" name="pass" maxlength="25" />
+				            <input type="password" class="form-control" name="pass" maxlength="30" />
 				        </div>
 				    </div><br /><br />
 				    <div class="form-group">
 				        <label class="col-xs-4 control-label">Rol:</label>
 				        <div class="col-xs-8">
 				            <select class="btn btn-default" name="rol">
+				            	<option value="">Escoger rol</option>
 				            	<option value="1">Usuario</option>
 				            	<option value="2">Administrador</option>
 <?php
@@ -44,6 +45,7 @@
 				        <label class="col-xs-4 control-label">Estado:</label>
 				        <div class="col-xs-8">
 				            <select class="btn btn-default" name="estado">
+				            	<option value="">Escoger estado</option>
 				            	<option value="0">Activo</option>
 				            	<option value="1">Inactivo</option>
 				            </select>
@@ -70,6 +72,61 @@
 				</form>
 			</div>
 		</div>
+
+		<script>
+			$(function () {
+				/* VALIDACION DE LOS CAMPOS DEL FORMULARIO, SI ESTAN RELLENOS O NO */
+				$('#anadirUsuarioForm')	.bootstrapValidator({
+			        framework: 'bootstrap',
+			        icon: {
+			            valid: 'glyphicon glyphicon-ok',
+			            invalid: 'glyphicon glyphicon-remove',
+			            validating: 'glyphicon glyphicon-refresh'
+			        },
+			        err: {
+			            container: 'tooltip'
+			        },
+			        fields: {
+			            nombre: {
+			            	err: 'tooltip',
+							row: '.col-xs-4',
+			                validators: {
+			                    notEmpty: {
+			                        message: "Introduce el nombre del usuario"
+			                    }
+			                }
+			            },
+			            pass: {
+			            	err: 'tooltip',
+							row: '.col-xs-4',
+			                validators: {
+			                    notEmpty: {
+			                        message: "Introduce una contraseña"
+			                    }
+			                }
+			            },
+			            rol: {
+			            	err: 'tooltip',
+							row: '.col-xs-4',
+			                validators: {
+			                    notEmpty: {
+			                        message: "Selecciona un rol"
+			                    }
+			                }
+			            },
+			            estado: {
+			            	err: 'tooltip',
+							row: '.col-xs-4',
+			                validators: {
+			                    notEmpty: {
+			                        message: "Selecciona un estado"
+			                    }
+			                }
+			            },
+			        },	 
+			    });
+			});
+		</script>
 		
 <?php
 

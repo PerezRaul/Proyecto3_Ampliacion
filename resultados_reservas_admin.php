@@ -30,11 +30,17 @@ function mostrarReservasAdmin(){
 				echo utf8_encode($recurso['nombre']);
 				echo "<br/>";
 				echo "<b>Fecha inicio:</b> ";
-				echo utf8_encode($reserva['dateini']);
+				echo utf8_encode($reserva['fecha_inicial']);
 				echo "<br/>";
+				echo "<b>Hora inicio:</b> ";
+				echo utf8_encode($reserva['hora_inicial']);
+				echo "<br />";
 				echo "<b>Fecha fin:</b> ";
-				echo utf8_encode($reserva['datefi']);
-				echo "<br></div><br/>";
+				echo utf8_encode($reserva['fecha_final']);
+				echo "<br/>";
+				echo "<b>Hora fin:</b> ";
+				echo utf8_encode($reserva['hora_final']);
+				echo "<br/></div><br/>";
 
 
 				$fichero="img/$recurso[img]";
@@ -47,14 +53,9 @@ function mostrarReservasAdmin(){
 			
 			echo "</div>";
 			echo "<div class='botonera8'>";         
-				echo '<div class="btn btn-success" id="btnModificar'.$reserva['id_reserva'].'" name="btnModificar">';
+				echo "<div class='btn btn-danger' id='btnBorrar".$reserva['id_reserva']."' name='btnBorrar'>";
 ?>      	
-    				<a href="modificarReserva.php?id_reserva=<?php echo $reserva['id_reserva']; ?>"><i class="fa fa-pencil-square-o fa-lg"></i> Modificar</a>
-				</div>
-<?php   
-				echo "<div class='btn btn-danger' id='btnBorrar'".$reserva['id_recurso']."' name='btnBorrar'>";
-?>      	
-    				<a href="borrarReserva.php?id_reserva=<?php echo $reserva['id_reserva']; ?>"><i class="fa fa-trash-o fa-lg"></i> Modificar</a>
+    				<a href="borrarReserva.php?id_reserva=<?php echo $reserva['id_reserva']; ?>"><i class="fa fa-trash-o fa-lg"></i> Eliminar</a>
 				</div>
 <?php   
 	        echo"</div>";
@@ -81,11 +82,17 @@ function mostrarReservasAdmin(){
 					echo utf8_encode($recurso['nombre']);
 					echo "<br/>";
 					echo "<b>Fecha inicio:</b> ";
-					echo utf8_encode($reserva['dateini']);
+					echo utf8_encode($reserva['fecha_inicial']);
 					echo "<br/>";
+					echo "<b>Hora inicio:</b> ";
+					echo utf8_encode($reserva['hora_inicial']);
+					echo "<br />";
 					echo "<b>Fecha fin:</b> ";
-					echo utf8_encode($reserva['datefi']);
-					echo "<br></div><br/>";
+					echo utf8_encode($reserva['fecha_final']);
+					echo "<br/>";
+					echo "<b>Hora fin:</b> ";
+					echo utf8_encode($reserva['hora_final']);
+					echo "<br/></div><br/>";
 					$fichero="img/$recurso[img]";
 				if(file_exists($fichero)&&(($recurso['img']) != '')){
 					echo "<div class='contimg'><img src='$fichero' width='250' heigth='250' ></div>";
@@ -96,14 +103,9 @@ function mostrarReservasAdmin(){
 			
 			echo "</div>";
 			echo "<div class='botonera8'>";         
-				echo '<div class="btn btn-success" id="btnModificar'.$reserva['id_reserva'].'" name="btnModificar">';
+				echo "<div class='btn btn-danger' id='btnBorrar".$reserva['id_reserva']."' name='btnBorrar'>";
 ?>      	
-    				<a href="modificarReserva.php?id_reserva=<?php echo $reserva['id_reserva']; ?>"><i class="fa fa-pencil-square-o fa-lg"></i> Modificar</a>
-				</div>
-<?php   
-				echo "<div class='btn btn-danger' id='btnBorrar'".$reserva['id_recurso']."' name='btnBorrar'>";
-?>      	
-    				<a href="borrarReserva.php?id_reserva=<?php echo $reserva['id_reserva']; ?>"><i class="fa fa-trash-o fa-lg"></i> Modificar</a>
+    				<a href="borrarReserva.php?id_reserva=<?php echo $reserva['id_reserva']; ?>"><i class="fa fa-trash-o fa-lg"></i> Eliminar</a>
 				</div>
 <?php   
 					echo "</div>";

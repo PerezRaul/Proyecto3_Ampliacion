@@ -22,7 +22,7 @@
 				    <div class="form-group">
 				        <label class="col-xs-4 control-label">Descripción:</label>
 				        <div class="col-xs-6">
-				            <textarea class="form-control" rows="7" name="descr" maxlength="250" style="width:520px !important;"><?php echo utf8_encode($resultado['descr'])?></textarea>
+				            <textarea class="form-control" rows="7" name="descr" maxlength="300" style="width:520px !important;"><?php echo utf8_encode($resultado['descr'])?></textarea>
 				        </div>
 				    </div><br /><br /><br /><br /><br /><br /><br /><br /><br />
 				    <div class="form-group">

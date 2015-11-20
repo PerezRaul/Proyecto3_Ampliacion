@@ -2,7 +2,11 @@
 	include 'conexion.php';
 	include 'header_admin.php';
 
-	$sql_usuarios = "SELECT * FROM usuario WHERE id_user = $_REQUEST[id_user]";
+	if (isset($_REQUEST['error'])){
+		$msg = $_REQUEST['error'];
+	}
+
+	$sql_usuarios = "SELECT * FROM usuario WHERE usuario.id_user = ".$_REQUEST['id_user'];
 	$consulta = mysqli_query($con, $sql_usuarios);
 
 	if(mysqli_num_rows($consulta)>0){
@@ -48,6 +52,13 @@
 ?>
 				            </select>
 				        </div>
+				    </div><br /><br /><br />
+				    <div id="error" style="color:red;margin-left:100px;">
+				    	<?php 
+				    		if(!empty($msg)){
+				    			echo $msg;
+				    		}
+				    	?>
 				    </div><br /><br /><br />
 				    <div class="botonera5">
 						<button type="submit" class="btn btn-success"><i class="fa fa-floppy-o fa-lg"></i> Guardar cambios</button>

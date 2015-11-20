@@ -84,13 +84,13 @@
                       <h4 style='color:white' 'width:280px'>BIENVENIDO - $nomUsuari </h4></div>";
 
 
-                $consulta_usuarios = ("SELECT * FROM usuario");
+                $consulta_usuarios = ("SELECT img FROM usuario WHERE usuario.id_user = $user_id");
                 $resultado_usuarios = mysqli_query($con, $consulta_usuarios);
                 $usuario = mysqli_fetch_array($resultado_usuarios);
 
                 $fichero="img/$usuario[img]";
                 if(file_exists($fichero)&&(($user_id) != '')){
-                  echo "<div class='perfil'><img src='$fichero' width='50' heigth='50' ></div>";
+                  echo "<div class='perfil'><img src='img/$fichero' width='50' heigth='50' ></div>";
                 }
                 else{
                   echo "<div class='perfil'><img src ='img/no_disponible.jpg'width='50' heigth='50'/></div>";
